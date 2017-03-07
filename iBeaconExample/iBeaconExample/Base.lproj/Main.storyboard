@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iBeaconExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon狀態" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV0-7Q-IEu">
+                                <rect key="frame" x="0.0" y="20" width="375" height="333.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否在region內?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJC-Th-XpO">
+                                <rect key="frame" x="0.0" y="353.5" width="375" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW5-aL-lew">
+                                <rect key="frame" x="20" y="385.5" width="335" height="36"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="搜尋">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="monitorIBeacon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fmw-Mi-rKC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aW5-aL-lew" secondAttribute="trailing" constant="20" symbolic="YES" id="4jE-Zf-M0E"/>
+                            <constraint firstItem="JJC-Th-XpO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cta-Vv-arv"/>
+                            <constraint firstItem="hV0-7Q-IEu" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="Obd-p4-z8f"/>
+                            <constraint firstAttribute="trailing" secondItem="hV0-7Q-IEu" secondAttribute="trailing" id="P8C-w3-hhp"/>
+                            <constraint firstItem="aW5-aL-lew" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="V15-7W-w4r"/>
+                            <constraint firstItem="JJC-Th-XpO" firstAttribute="top" secondItem="hV0-7Q-IEu" secondAttribute="bottom" id="Z55-Fc-9ir"/>
+                            <constraint firstItem="hV0-7Q-IEu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eZt-w2-uUO"/>
+                            <constraint firstItem="aW5-aL-lew" firstAttribute="top" secondItem="JJC-Th-XpO" secondAttribute="bottom" constant="8" symbolic="YES" id="iSw-7Z-flO"/>
+                            <constraint firstAttribute="trailing" secondItem="JJC-Th-XpO" secondAttribute="trailing" id="lQ7-t2-1UB"/>
+                            <constraint firstItem="aW5-aL-lew" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nqn-f9-p0O"/>
+                            <constraint firstItem="hV0-7Q-IEu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="saY-Jy-tCW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beaconInformationLabel" destination="hV0-7Q-IEu" id="n3u-U1-6Y6"/>
+                        <outlet property="stateLabel" destination="JJC-Th-XpO" id="Rcv-NC-12i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
